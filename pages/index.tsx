@@ -16,15 +16,11 @@ const Home: NextPage = () => {
   return (
     <div className={" max-w-screen h-screen"}>
       <Head>
-        <title>Jerboas86 Blog</title>
+        <title>Medium Blog</title>
         <meta name="description" content="blog posts about programming" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div
-        className={
-          "grid grid-cols-4 bg-gray-100 max-w-5xl h-full mx-auto text-xl font-bold"
-        }
-      >
+      <div className={"grid grid-cols-4 max-w-7xl mx-auto text-xl font-bold"}>
         <Menu>
           <MenuItem icon={HomeIcon} name="Home" isSelected={true} />
           <MenuItem icon={AlertIcon} name="Notifications" />

@@ -9,8 +9,8 @@ export const Articles = (props: ArticlesProps) => {
     <div
       className={
         "col-start-2 row-start-1 col-span-3 " +
-        "flex flex-col gap-4 " +
-        "py-4 pl-10 " +
+        "flex flex-col " +
+        "py-4 " +
         "border-l-2 border-r-2 border-gray-300"
       }
     >
