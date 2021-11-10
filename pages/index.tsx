@@ -11,8 +11,17 @@ import { Menu } from "../components/Menu";
 import { MenuItem } from "../components/MenuItem";
 import { StatsIcon } from "../components/StatsIcon";
 import { WriteIcon } from "../components/WriteIcon";
+import { useMenu } from "../hooks/useMenu";
+
+const HOME = "home";
+const ALERT = "alert";
+const LISTS = "lists";
+const STATS = "stats";
+const WRITE = "write";
 
 const Home: NextPage = () => {
+  const { menu, setMenu } = useMenu();
+
   return (
     <div className={" max-w-screen h-screen"}>
       <Head>
@@ -22,11 +31,41 @@ const Home: NextPage = () => {
       </Head>
       <div className={"grid grid-cols-4 max-w-7xl mx-auto text-xl font-bold"}>
         <Menu>
-          <MenuItem icon={HomeIcon} name="Home" isSelected={true} />
-          <MenuItem icon={AlertIcon} name="Notifications" />
-          <MenuItem icon={ListIcon} name="Lists" />
-          <MenuItem icon={StatsIcon} name="Stats" />
-          <MenuItem icon={WriteIcon} name="Write" />
+          <MenuItem
+            icon={HomeIcon}
+            id={HOME}
+            label="Home"
+            isSelected={menu === HOME}
+            setSelected={setMenu}
+          />
+          <MenuItem
+            icon={AlertIcon}
+            id={ALERT}
+            label="Notifications"
+            isSelected={menu === ALERT}
+            setSelected={setMenu}
+          />
+          <MenuItem
+            icon={ListIcon}
+            id={LISTS}
+            label="Lists"
+            isSelected={menu === LISTS}
+            setSelected={setMenu}
+          />
+          <MenuItem
+            icon={StatsIcon}
+            id={STATS}
+            label="Stats"
+            isSelected={menu === STATS}
+            setSelected={setMenu}
+          />
+          <MenuItem
+            icon={WriteIcon}
+            id={WRITE}
+            label="Write"
+            isSelected={menu === WRITE}
+            setSelected={setMenu}
+          />
         </Menu>
         <Articles>
           <ArticleItem {...data[0]} />
