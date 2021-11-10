@@ -2,10 +2,15 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
+import { AlertIcon } from "../components/AlertIcon";
 import { ArticleItem } from "../components/ArticleItem";
 import { Articles, data } from "../components/Articles";
+import { HomeIcon } from "../components/HomeIcon";
+import { ListIcon } from "../components/ListIcon";
 import { Menu } from "../components/Menu";
 import { MenuItem } from "../components/MenuItem";
+import { StatsIcon } from "../components/StatsIcon";
+import { WriteIcon } from "../components/WriteIcon";
 
 const Home: NextPage = () => {
   return (
@@ -21,11 +26,11 @@ const Home: NextPage = () => {
         }
       >
         <Menu>
-          <MenuItem image="Icon" name="Home" />
-          <MenuItem image="Icon" name="Notifications" />
-          <MenuItem image="Icon" name="Lists" />
-          <MenuItem image="Icon" name="Stats" />
-          <MenuItem image="Icon" name="Write" />
+          <MenuItem icon={HomeIcon} name="Home" isSelected={true} />
+          <MenuItem icon={AlertIcon} name="Notifications" />
+          <MenuItem icon={ListIcon} name="Lists" />
+          <MenuItem icon={StatsIcon} name="Stats" />
+          <MenuItem icon={WriteIcon} name="Write" />
         </Menu>
         <Articles>
           <ArticleItem {...data[0]} />
